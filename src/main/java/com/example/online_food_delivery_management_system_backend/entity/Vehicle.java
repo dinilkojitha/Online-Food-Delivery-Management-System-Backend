@@ -9,20 +9,20 @@ import lombok.Setter;
 @Getter
 @Setter
 @Entity
-@Table(name = "vehical")
-public class Vehical {
+@Table(name = "vehicle")
+public class Vehicle {
     @Id
-    @Column(name = "vehicalID", nullable = false)
+    @Column(name = "vehicleID", nullable = false)
     private Integer id;
 
     @NotNull
-    @Column(name = "vehicalType", nullable = false)
-    private Integer vehicalType;
+    @Column(name = "vehicleType", nullable = false)
+    private Integer vehicleType;
 
     @Size(max = 7)
     @NotNull
-    @Column(name = "vehicalNumber", nullable = false, length = 7)
-    private String vehicalNumber;
+    @Column(name = "vehicleNumber", nullable = false, length = 7)
+    private String vehicleNumber;
 
     @NotNull
     @ManyToOne(fetch = FetchType.LAZY, optional = false)

@@ -1,4 +1,4 @@
-package com.example.online_food_delivery_management_system_backend.dto;
+package com.example.online_food_delivery_management_system_backend.dto.response;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -14,7 +14,6 @@ public class UserResponse {
     private String nic;
     private String phoneNumber;
     private String email;
-    private String password;
     private String role;
     private Instant registeredDate;
 }

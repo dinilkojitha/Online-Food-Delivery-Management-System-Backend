@@ -1,12 +1,15 @@
 package com.example.online_food_delivery_management_system_backend.service;
 
+import com.example.online_food_delivery_management_system_backend.dto.response.UserResponse;
 import com.example.online_food_delivery_management_system_backend.entity.User;
+import com.example.online_food_delivery_management_system_backend.mapper.UserMapper;
 import com.example.online_food_delivery_management_system_backend.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 @Service
@@ -26,10 +29,15 @@ public class UserService {
         }
     }
 
-    public List<User> getAll(){
+    public List<UserResponse> getAll(){
         List<User> users =  userRepository.findAll();
-        users.forEach(user -> user.setPassword(null));
-        return users;
+        List<UserResponse> userResponseList = new ArrayList<>();
+        UserMapper userMapper = new UserMapper();
+
+        users.forEach(user -> {
+            userResponseList.add(userMapper.toResponse(user));
+        });
+        return userResponseList;
     }
 
 

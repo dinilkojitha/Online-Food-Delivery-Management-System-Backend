@@ -1,6 +1,6 @@
 package com.example.online_food_delivery_management_system_backend.controller;
 
-import com.example.online_food_delivery_management_system_backend.entity.User;
+import com.example.online_food_delivery_management_system_backend.dto.response.UserResponse;
 import com.example.online_food_delivery_management_system_backend.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -22,7 +22,7 @@ public class UserController {
     }
 
     @GetMapping(value = "/allUsers")
-    public List<User> getAll(){
+    public List<UserResponse> getAll(){
         return userService.getAll();
     }
 

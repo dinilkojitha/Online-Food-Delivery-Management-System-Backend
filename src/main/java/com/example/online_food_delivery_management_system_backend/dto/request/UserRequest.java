@@ -1,4 +1,4 @@
-package com.example.online_food_delivery_management_system_backend.dto;
+package com.example.online_food_delivery_management_system_backend.dto.request;
 
 import lombok.Getter;
 import lombok.Setter;
@@ -9,7 +9,6 @@ import java.time.Instant;
 @Setter
 
 public class UserRequest {
-    private Integer id;
     private String userName;
     private String nic;
     private String phoneNumber;
